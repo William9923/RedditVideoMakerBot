@@ -3,6 +3,8 @@ from pathlib import Path
 from rich.progress import track
 from utils.console import print_step, print_substep
 import json
+from dotenv import load_dotenv
+import os
 
 
 def download_screenshots_of_reddit_posts(reddit_object, screenshot_num, theme):
@@ -30,6 +32,14 @@ def download_screenshots_of_reddit_posts(reddit_object, screenshot_num, theme):
 
         # Get the thread screenshot
         page = context.new_page()
+
+        # Get timeout from .env
+        load_dotenv()
+        timeout = os.getenv('TIMEOUT')
+        if timeout is None:
+            timeout = 0
+        page.set_default_timeout(timeout)
+        
         page.goto(reddit_object["thread_url"])
         page.set_viewport_size(ViewportSize(width=1920, height=1080))
         if page.locator('[data-testid="content-gate"]').is_visible():

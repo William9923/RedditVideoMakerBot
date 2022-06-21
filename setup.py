@@ -110,6 +110,8 @@ with open('.env', 'a') as f:
 	f.write(f'SUBREDDIT="{subreddit}"\n')
 	time.sleep(0.5)
 	f.write(f'OPACITY="{opacity}"\n')
+	time.sleep(0.5)
+	f.write(f'TIMEOUT={0}\n')
 
 with open('.setup-done-before', 'a') as f:
 	f.write("This file blocks the setup assistant from running again. Delete this file to run setup again.")
