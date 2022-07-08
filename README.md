@@ -1,6 +1,6 @@
 # Reddit Video Maker Bot 🎥
 
-All done WITHOUT video editing or asset compiling. Just pure ✨programming magic✨.
+All done WITHOUT video editing or asset compiling. Just pure ✨programming magic✨. Testing
 
 Created by Lewis Menelaws & [TMRRW](https://tmrrwinc.ca)
 
